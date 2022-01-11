@@ -8,6 +8,7 @@ from src.domain.product.model import Product
 from src.domain.category.model import Category
 from src.domain.supplier.model import Supplier
 from src.domain.coupon.model import Coupon
+from src.domain.payment_method.model import PaymentMethod
 
 metadata = Base.metadata
 
@@ -46,8 +47,17 @@ table_coupon = Table(
   Column('value', Float(10, 2)),
 )
 
+table_payment_method = Table(
+  'payment_method', 
+  metadata, 
+  Column('id', Integer, primary_key=True, autoincrement=True),
+  Column('name', String(45)),
+  Column('enabled', Boolean, default=True),
+)
+
 def start_mapper():
   mapper(Product, table_product)
   mapper(Category, table_category)
   mapper(Supplier, table_supplier)
   mapper(Coupon, table_coupon)
+  mapper(PaymentMethod, table_payment_method)
