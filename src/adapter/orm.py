@@ -1,3 +1,4 @@
+from datetime import datetime
 from sqlalchemy import Table
 from sqlalchemy.orm import mapper
 from sqlalchemy.sql.schema import Column
