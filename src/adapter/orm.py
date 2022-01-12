@@ -8,6 +8,7 @@ from src.domain.category.model import Category
 from src.domain.supplier.model import Supplier
 from src.domain.coupon.model import Coupon
 from src.domain.payment_method.model import PaymentMethod
+from src.domain.payment_discount.model import PaymentDiscount
 
 
 metadata = Base.metadata
@@ -28,7 +29,7 @@ table_supplier = Table(
 )
 
 table_product = Table(
-    "products",
+    "product",
     metadata,
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("description", String(100)),
@@ -60,6 +61,17 @@ table_payment_method = Table(
 )
 
 
+table_payment_discount = Table(
+    "payment_discount",
+    metadata,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("mode", String(45)),
+    Column("value", Float(10, 2)),
+    Column("product_id", ForeignKey("product.id")),
+    Column("payment_method_id", ForeignKey("payment_method.id")),
+)
+
+
 def start_mapper():
     category_mapper = mapper(Category, table_category)
     supplier_mapper = mapper(Supplier, table_supplier)
@@ -73,5 +85,15 @@ def start_mapper():
         },
     )
 
+    payment_method_mapper = mapper(PaymentMethod, table_payment_method)
+
+    mapper(
+        PaymentDiscount,
+        table_payment_discount,
+        properties={
+            "product": relationship(Product),
+            "payment_method": relationship(payment_method_mapper),
+        },
+    )
+
     mapper(Coupon, table_coupon)
-    mapper(PaymentMethod, table_payment_method)
