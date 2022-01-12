@@ -3,4 +3,4 @@ from src.adapter.sqlalchemy_repository import SqlAlchemyRepository
 
 
 class SupplierRepository(SqlAlchemyRepository[Supplier]):
-  pass
+    pass
