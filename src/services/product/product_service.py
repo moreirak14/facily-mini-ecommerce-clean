@@ -7,35 +7,27 @@ from src.services.exceptions import (
 )
 from src.domain.product.model import Product
 from src.domain.product_discount.model import ProductDiscount
+from src.services.product.product_dto import ProductDTO
 
 
-def create_product(
-    description: str,
-    price: float,
-    technical_details: str,
-    image: str,
-    visible: bool,
-    category_id: int,
-    supplier_id: int,
-    uow: SqlAlchemyUnitOfWork,
-):
+def create_product(product_dto: ProductDTO, uow: SqlAlchemyUnitOfWork):
     with uow:
-        category = uow.category_repository.get(id=category_id)
+        category = uow.category_repository.get(id=product_dto.category_id)
         if not category:
             raise CategoryNotFound("Categoria não encontrada")
 
-        supplier = uow.supplier_repository.get(id=supplier_id)
+        supplier = uow.supplier_repository.get(id=product_dto.supplier_id)
         if not supplier:
             raise SupplierNotFound("Fornecedor não encontrado")
 
         product = Product(
-            description=description,
-            price=price,
-            technical_details=technical_details,
-            image=image,
-            visible=visible,
+            description=product_dto.description,
+            price=product_dto.price,
+            technical_details=product_dto.technical_details,
+            image=product_dto.image,
+            visible=product_dto.visible,
             category=category,
-            supplier=category,
+            supplier=supplier,
         )
 
         uow.product_repository.add(product)

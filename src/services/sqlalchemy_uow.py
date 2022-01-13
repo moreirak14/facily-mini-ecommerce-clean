@@ -6,6 +6,7 @@ from src.adapter.repositories.customer_repository import CustomerRepository
 from src.adapter.repositories.address_repository import AddressRepository
 from src.domain.category.model import Category
 from src.domain.supplier.model import Supplier
+from src.adapter.database import Session
 from src.domain.payment_method.model import PaymentMethod
 from src.domain.product.model import Product
 from src.domain.customer.model import Customer
@@ -13,8 +14,8 @@ from src.domain.address.model import Address
 
 
 class SqlAlchemyUnitOfWork:
-    def __init__(self, session):
-        self.session = session
+    def __init__(self):
+        self.session = Session()
 
     def __enter__(self):
         self.payment_method_repository = PaymentMethodRepository(
