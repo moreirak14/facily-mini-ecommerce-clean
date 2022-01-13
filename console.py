@@ -1,86 +1,98 @@
-from src.domain.address.model import Address
-from src.domain.customer.model import Customer
-from src.adapter.repositories.customer_repository import CustomerRepository
-from src.adapter.repositories.address_repository import AddressRepository
+from src.services.sqlalchemy_uow import SqlAlchemyUnitOfWork
 from src.adapter.database import Session
 from src.adapter.orm import start_mapper
+from src.services.category_service import create_category
+from src.services.supplier_service import create_supplier
+from src.services.product_service import create_product, create_discount
+from src.services.payment_method_service import create_payment_method
+from src.services.customer_service import create_customer, create_address
 
 
 start_mapper()
 
 db = Session()
+uow = SqlAlchemyUnitOfWork(db)
 
-customer_repository = CustomerRepository(db)
-address_repository = AddressRepository(db)
+# category = create_category(name="Eletronicos", uow=uow)
+# supplier = create_supplier(name="LG", uow=uow)
 
-customer = Customer(
-    first_name="kaique",
-    last_name="moreira",
-    phone_number="11912345678",
-    genre="M",
-    document_id="45579312345",
-    birth_date=None,
-)
-customer.add_address(Address(
-    address="Rua tal",
-    city="Aruja",
-    state="SP",
-    number="139",
-    zipcode="074000",
-    neighbourhood="137",
-    primary=True,
-))
-customer.add_address(Address(
-    address="Rua sei la",
-    city="Aruja",
-    state="SP",
-    number="139",
-    zipcode="074000",
-    neighbourhood="137",
-    primary=True,
-))
-for i in customer.address:
-    print(i.address)
-    print(i.primary)
-customer_repository.add(customer)
-
-# address_repository = AddressRepository(db)
-# address = Address(
-    # address="Rua tal 1",
-    # city="Aruja 1",
-    # state="SP 1",
-    # number="140",
-    # zipcode="074000",
-    # neighbourhood="137",
-    # primary=False,
-
-# address_repository.add(address)
-
-# repository = ProductRepository(db)
-
-# supplier = Supplier(name="LG")
-# category = Category(name="Eletronico")
-
-# product = Product(
+# product = create_product(
 #     description="TV",
-#     price=980,
-#     technical_details="fonte desligando sozinha",
+#     price=10,
+#     technical_details="fonte desligando",
 #     image="",
 #     visible=True,
-#     category=category,
-#     supplier=supplier,
-# )
+#     category_id=1,
+#     supplier_id=1,
+#     uow=uow)
 
-# payment_method = PaymentMethod(name="debito", enabled=True)
+# payment_method = create_payment_method(name="Visa Card", enabled=True, uow=uow)
 
-# payment_discount = PaymentDiscount(
-#     mode="dinheiro",
+# product_discount = create_discount(
+#     mode="percentage",
 #     value=25,
-#     product=product,
-#     payment_method=payment_method,
+#     payment_method_id=1,
+#     product_id=1,
+#     uow=uow)
+
+# customer = create_customer(
+#     first_name="kaique",
+#     last_name="moreira",
+#     phone_number="11912345678",
+#     genre="M",
+#     document_id="45579312345",
+#     birth_date=None,
+#     uow=uow,
 # )
 
-# repository.add(payment_discount)
+# address = create_address(
+#     address="Rua sei lá",
+#     city="Aruja",
+#     state="SP",
+#     number="140",
+#     zipcode="074000",
+#     neighbourhood="139",
+#     primary=True,
+#     customer_id=1,
+#     uow=uow
+# )
 
-# print(payment_discount.id)
-# print(payment_discount.mode)
+
+
+## SEM UNIT OF WORK
+# customer_repository = CustomerRepository(db)
+
+# customer = Customer(
+#     first_name="kaique",
+#     last_name="moreira",
+#     phone_number="11912345678",
+#     genre="M",
+#     document_id="45579312345",
+#     birth_date=None,
+# )
+# customer.add_address(
+#     Address(
+#         address="Rua tal",
+#         city="Aruja",
+#         state="SP",
+#         number="139",
+#         zipcode="074000",
+#         neighbourhood="137",
+#         primary=True,
+#     )
+# )
+# customer.add_address(
+#     Address(
+#         address="Rua sei la",
+#         city="Aruja",
+#         state="SP",
+#         number="139",
+#         zipcode="074000",
+#         neighbourhood="137",
+#         primary=True,
+#     )
+# )
+# for i in customer.address:
+#     print(i.address)
+#     print(i.primary)
+# customer_repository.add(customer)

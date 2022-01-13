@@ -73,6 +73,7 @@ table_product_discount = Table(
     Column("payment_method_id", ForeignKey("payment_methods.id")),
 )
 
+
 table_customer = Table(
     "customers",
     metadata,
@@ -126,5 +127,6 @@ def start_mapper():
     )
 
     mapper(Coupon, table_coupon)
-    mapper(Customer, table_customer, properties={"address": relationship(address_mapper)})
-    
+    mapper(
+        Customer, table_customer, properties={"address": relationship(address_mapper)}
+    )
