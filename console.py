@@ -1,12 +1,8 @@
 from src.services.sqlalchemy_uow import SqlAlchemyUnitOfWork
 from src.adapter.database import Session
 from src.adapter.orm import start_mapper
-from src.services.category_service import create_category
+from src.services.category.category_service import create_category
 from src.services.supplier_service import create_supplier
-from services.product.product_service import create_product, create_discount
-from src.services.payment_method_service import create_payment_method
-from src.services.customer_service import create_customer, create_address
-
 
 start_mapper()
 
