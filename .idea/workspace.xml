@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/console.py" beforeDir="false" afterPath="$PROJECT_DIR$/console.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/fastapi/routers/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/fastapi/routers/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/category_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/category/category_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/supplier_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/supplier/supplier_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/services/supplier" />
       <recent name="$PROJECT_DIR$/src/services/category" />
     </key>
   </component>
@@ -56,7 +57,7 @@
       <workItem from="1642016718874" duration="90000" />
       <workItem from="1642019443434" duration="5000" />
       <workItem from="1642124321310" duration="118000" />
-      <workItem from="1642124455783" duration="1926000" />
+      <workItem from="1642124455783" duration="3115000" />
     </task>
     <servers />
   </component>
