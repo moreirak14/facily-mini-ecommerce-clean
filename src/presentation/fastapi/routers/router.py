@@ -6,6 +6,7 @@ from src.presentation.fastapi.routers.payment_method_router import (
     router as payment_method_router,
 )
 from src.presentation.fastapi.routers.customer_router import router as customer_router
+from src.presentation.fastapi.routers.coupon_router import router as coupon_router
 
 
 router = APIRouter()
@@ -16,3 +17,4 @@ router.include_router(
     payment_method_router, prefix="/payment_methods", tags=["payment_method"]
 )
 router.include_router(customer_router, prefix="/customers", tags=["customer"])
+router.include_router(coupon_router, prefix="/coupons", tags=["coupon"])

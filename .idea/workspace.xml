@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="616ec8d9-b37d-4521-82fa-5432781749b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/coupon/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/coupon/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/fastapi/routers/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/fastapi/routers/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/fastapi/routers/supplier_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/fastapi/routers/supplier_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/customer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/customer/customer_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/payment_method_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/payment_method/payment_method_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sqlalchemy_uow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sqlalchemy_uow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +44,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose.yml" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/kaique/Projects/test/facily-aceleradev-mini-ecommerce"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/services/customer" />
@@ -68,7 +69,9 @@
       <workItem from="1642016718874" duration="90000" />
       <workItem from="1642019443434" duration="5000" />
       <workItem from="1642124321310" duration="118000" />
-      <workItem from="1642124455783" duration="9412000" />
+      <workItem from="1642124455783" duration="14657000" />
+      <workItem from="1642438626932" duration="17000" />
+      <workItem from="1656456047037" duration="189000" />
     </task>
     <servers />
   </component>
@@ -85,15 +88,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/services/sqlalchemy_uow.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

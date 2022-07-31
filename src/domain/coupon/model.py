@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import datetime, date
+from src.domain.exceptions import ValidateDatetimeCoupon
 
 
 class Coupon:
@@ -10,3 +11,7 @@ class Coupon:
         self.limit = limit
         self.type = type
         self.value = value
+
+    def validate_date(self):
+        if datetime.utcnow() > self.expire_at:
+            raise ValidateDatetimeCoupon("Data de expiração invalida")

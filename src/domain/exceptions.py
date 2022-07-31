@@ -4,3 +4,7 @@ class DiscountExists(Exception):
 
 class PaymentMethodDisabled(Exception):
     pass
+
+
+class ValidateDatetimeCoupon(Exception):
+    pass

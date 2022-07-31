@@ -16,3 +16,7 @@ class ProductNotFound(Exception):
 
 class CustomerNotFound(Exception):
     pass
+
+
+class InvalidCode(Exception):
+    pass
